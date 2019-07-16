@@ -1,7 +1,7 @@
 # 查看python保留关键字
 import keyword
 print(keyword.kwlist)
-
+print('------------------------------')
 
 # 注释
 # 第一个注释
@@ -17,14 +17,14 @@ print(keyword.kwlist)
 第六注释
 """
 print ("Hello, Python!")
-
+print('------------------------------')
 
 # 行与缩进
 if True:
     print ("True")
 else:
     print ("False")
-
+print('------------------------------')
 
 # 多行语句
 # total = item_one + \
@@ -43,6 +43,7 @@ word = '字符串'
 sentence = "这是一个句子。"
 paragraph = """这是一个段落，
 可以由多行组成"""
+print('------------------------------')
 
 # 字符串的截取:变量[头下标:尾下标:步长]
 str='Runoob'
@@ -59,15 +60,15 @@ print('------------------------------')
  
 print('hello\nrunoob')      # 使用反斜杠(\)+n转义特殊字符
 print(r'hello\nrunoob')     # 在字符串前面添加一个 r，表示原始字符串，不会发生转义
-
+print('------------------------------')
 
 # 等待用户输入
 input("\n\n按下 enter 键后退出。")
-
+print('------------------------------')
 
 # 同一行显示多条语句
 import sys; x = 'runoob'; sys.stdout.write(x + '\n')
-
+print('------------------------------')
 
 # 多个语句构成代码组
 if x : 
@@ -76,7 +77,7 @@ elif x :
    pass 
 else : 
    pass
-
+print('------------------------------')
 
 # Print 输出
 x="a"
@@ -90,7 +91,7 @@ print('---------')
 print( x, end=" " )
 print( y, end=" " )
 print()
-
+print('------------------------------')
 
 # import 与 from...import
 # 导入 sys 模块
@@ -106,3 +107,4 @@ from sys import argv,path  #  导入特定的成员
  
 print('================python from import===================================')
 print('path:',path) # 因为已经导入path成员，所以此处引用时不需要加sys.path
+print('------------------------------')
