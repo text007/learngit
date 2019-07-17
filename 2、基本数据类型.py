@@ -182,44 +182,17 @@ print('------------------------------')
 
 # Python数据类型转换
 
-x = 3.123456
 # int(x [,base])将x转换为一个整数
-print(int(x))
-
 # float(x)将x转换到一个浮点数
-print(float(x))
-
 # complex(real [,imag])创建一个复数
-print(compile(x))
-
 # str(x)将对象 x 转换为字符串
-print(str(x))
-
 # repr(x)将对象 x 转换为表达式字符串
-print(repr(x))
-
 # eval(str)用来计算在字符串中的有效Python表达式,并返回一个对象
-# tuple(s)将序列 s 转换为一个元组
-print(tuple(x))
-
 # list(s)将序列 s 转换为一个列表
-print(list(x))
-
 # set(s)转换为可变集合
-print(set(s))
-
 # frozenset(s)转换为不可变集合
-print(frozenset(x))
-
 # chr(x)将一个整数转换为一个字符
-print(chr(x))
-
 # ord(x)将一个字符转换为它的整数值
-print(ord(x))
-
 # hex(x)将一个整数转换为一个十六进制字符串
-print(hex(x))
-
 # oct(x)将一个整数转换为一个八进制字符串
-print(oct(x))
-print('------------------------------')
+
