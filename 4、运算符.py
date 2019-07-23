@@ -224,7 +224,87 @@ a = 10
 b = 20
 list1 = [1, 2, 3, 4, 5]
 
-if (a in list1)
+if (a in list1):
     print('a 在 list1 中')
 else:
-    print('a 不足 list1 中')
+    print('a 不在 list1 中')
+
+if (b not in list1):
+    print("b 不在 list1 中")
+else:
+    print("b 在 list1 中")
+
+# 修改变量 a 的值
+a = 2
+if (a in list1):
+    print('a 在 list1 中')
+else:
+    print('a 不在 list1 中')
+
+
+# 身份运算符
+'''
+is      是判断两个标识符是不是引用自一个对象,x is y, 类似 id(x) == id(y) , 如果引用的是同一个对象则返回 True，否则返回 False
+is not  是判断两个标识符是不是引用自不同对象,x is not y ， 类似 id(a) != id(b)。如果引用的不是同一个对象则返回结果 True，否则返回 False。
+'''
+# id():用于获取对象内存地址
+a = 20
+b = 20
+
+if (a is b):
+    print('a == b ')
+else:
+    print('a != b')
+
+if (id(a) == id(b)):
+    print('a 和 b 内存地址相同')
+else:
+    print('a 和 b 内存地址不同')
+
+# 修改变量 b 的值
+b = 30
+if (a is b):
+    print('a == b ')
+else:
+    print('a != b')
+
+if (a is not b):
+    print('a != b ')
+else:
+    print('a == b')
+
+
+# 运算符优先级
+'''
+优先级高到低
+**	        指数 (最高优先级)
+~ + -	    按位翻转, 一元加号和减号 (最后两个的方法名为 +@ 和 -@)
+* / % //	乘，除，取模和取整除
++ -	        加法减法
+>> <<	    右移，左移运算符
+&	        位 'AND'
+^ |	        位运算符
+<= < > >=	比较运算符
+<> == !=	等于运算符
+= %= /= //= -= += *= **=	赋值运算符
+is is not	身份运算符
+in not in	成员运算符
+not and or	逻辑运算符
+'''
+a = 20
+b = 10
+c = 15
+d = 5
+e = 0
+
+e = (a + b) * c / d     #((20+10)*15)/5
+print('(a + b) * c / d 运算结果：', e)
+
+e = ((a + b ) * c) / d  
+print('((a + b ) * c) / d 运算结果：', e)
+
+e = (a + b) * (c / d)
+print('(a + b) * (c / d) 运算结果：', e)
+
+e = a + (b * c) / d
+print('a + (b * c) / d 运算结果：', e)
