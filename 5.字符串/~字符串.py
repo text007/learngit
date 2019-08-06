@@ -250,7 +250,7 @@ isdecimal()
 str1 = 'this is ... wow!!'
 print(str1.capitalize())
 
-# center（）方法：指定的宽度，居中的字符串
+# center()方法：指定的宽度，居中的字符串
 str2 = '[www.baidu.com]'
 print(str2.center(40, '-'))
 
@@ -328,7 +328,7 @@ str20 = u'abcd123'
 print(str19.isnumeric())
 print(str20.isnumeric())
 
-# isspace() 方法检测字符串是否只由空白字符组成，返回True and False
+# isspace()方法:检测字符串是否只由空白字符组成，返回True and False
 str21 = '   '
 str22 = 'a b c d'
 print(str21.isspace())
@@ -365,3 +365,96 @@ print(str27.ljust(25,'-'))
 str28 = 'ABCde'
 print(str28.lower())
 
+# lstrip()方法：用于截掉字符串左边的空格或指定字符。
+str29 = "88888abc d"
+print(str29.lstrip('8'))
+
+# maketrans()方法:用于创建字符映射的转换表，对于接受两个参数的最简单的调用方式，
+# 第一个参数是字符串，表示需要转换的字符，
+# 第二个参数也是字符串表示转换的目标。
+# 两个字符串的长度必须相同，为一一对应的关系。
+intad = 'aeiou'
+outtad = '12345'
+str30 = "this is string example....wow!!!"
+trantad = str30.maketrans(intad, outtad)
+print(str30.translate(trantad))
+
+# max()方法:返回字符串中最大的字母
+str31 = 'Abcde123'
+print(max(str31))
+
+# min()方法:返回字符串中最小的字母
+str32 = 'Abcde123'
+print(min(str32))
+
+# replace()方法:把字符串中的old（旧字符串）替换成new(新字符串)，如果指定第三个参数max，则替换不超过max次
+str33 = "this is string example....this is...!!!"
+print(str33.replace('is', 'was', 3))
+
+# rfind()方法：返回字符串最后一次出现的位置，如果没有匹配项则返回-1
+# find()方法：返回字符串第一次出现的位置，如果没有匹配项则返回-1
+str34 = "this is string example....this is...!!!"
+str35 = 'is'
+print(str34.rfind(str35, 0, 10))
+print(str34.rfind(str35, 10, 0))
+print(str34.find(str35, 0, 10))
+print(str34.find(str35, 10, 0))
+
+# rindex()方法：返回子字符串str在字符串中最后出现的位置，如果没有匹配的字符串会报异常，可以指定可选参数[beg:end]设置查找的区间
+str36 = "this is string example....!!!"
+str37 = 'is'
+print(str36.rindex(str37, 0 , 10))
+
+# rjust()方法：返回一个原字符串右对齐,并使用空格填充至长度width的新字符串。指定的长度小于字符串的长度则返回原字符串。
+str38 = 'qwer123'
+print(str38.rjust(20, '-'))
+
+# rstrip()方法：删除string字符串末尾的指定字符（默认为空格）
+str39 = "------this is string example---------"
+print(str39.rstrip('-'))
+
+# split()方法：通过指定分隔符对字符串进行切片，如果第二个参数num有指定值，则分割为num+1个子字符串
+str40 = "this is string example....wow!!!"
+print(str40.split())            #把空格替换成（，）分隔，进行切片
+print(str40.split('i', 2))      #把前 2 个 i 替换成（，）分隔
+
+# splitlines()方法：按照行('\r','\r\n',\n')分隔，返回一个包含各行作为元素的列表，如果参数keepends为False，不包含换行符，如果为True，则保留换行符
+str41 = 'ad c\n\nde fg\r\n'
+print(str41.splitlines())
+print(str41.splitlines(True))
+
+# startswith()方法:用于检查字符串是否是以指定子字符串开头，如果是则返回True，否则返回False。如果参数 beg和 end指定值，则在指定范围内检查
+str42 = "this is string example....wow!!!"
+print(str42.startswith('this', 0, 4))
+
+# strip()方法:用于移除字符串头尾指定的字符（默认为空格）或字符序列
+# 注意：该方法只能删除开头或是结尾的字符，不能删除中间部分的字符
+str43 = '123abcABC321'
+print(str43.strip('12'))
+
+# swapcase()方法:用于对字符串的大小写字母进行转换
+str44 = '123abcABC321'
+print(str44.swapcase())
+
+# title()方法:返回"标题化"的字符串,就是说所有单词的首个字母转化为大写，其余字母均为小写
+# 注意，非字母后的第一个字母将转换为大写字母
+str45 = "this is hello b2b2b2 and 3g3g3g!!!"
+print(str45.title())
+
+# translate()方法:根据参数table给出的表(包含256个字符)转换字符串的字符,要过滤掉的字符放到deletechars参数中
+# 制作翻译表：maketrans（）方法：b1与b2一一对应，相互转换; bytes()方法：创建字符节码
+bytes_tabtrans = bytes.maketrans(b'abcdefghijklmnopqrstuvwxyz', b'ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+print(b'abcdoob'.translate(bytes_tabtrans, b'o'))   # 转换为大写，并删除字母
+
+# upper()方法：将字符串中的小写字母转为大写字母
+str56 = 'abcABC123'
+print(str56.upper())
+
+# zfill()方法:返回指定长度的字符串，原字符串右对齐，前面填充0
+str57 = 'abcABC123'
+print(str57.zfill(15))
+
+# isdecimal()方法:检查字符串是否只包含十进制字符。这种方法只存在于unicode对象,只包含十进制字符返回True，否则返回False
+# 注意:定义一个十进制字符串，只需要在字符串前添加 'u' 前缀即可
+str58 = 'abcABC123'
+print(str58.isdecimal())
