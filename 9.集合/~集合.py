@@ -139,7 +139,7 @@ print(set23)
 set23 = {'a', 'b', 1, 2}
 set24 = {'a', 'c', 3, 2}
 set23.intersection_update(set24)
-print(set23,'\n')
+print(set23)
 
 # isdisjoint()方法:用于判断两个集合是否包含相同的元素，如果没有返回 True，否则返回 False
 set25 = {'a', 'b', 1, 2}
@@ -147,3 +147,53 @@ set26 = {'c', 3}
 set27 = set25.isdisjoint(set26)
 print(set27)
 
+# issubset()方法:用于判断集合的所有元素是否都包含在指定集合中，如果是则返回 True，否则返回 False
+set28 = {'a', 2}
+set29 = {'a', 'c', 3, 2}
+set30 = set28.issubset(set29)
+print(set30)
+
+# issuperset()方法:用于判断指定集合的所有元素是否都包含在原始的集合中，如果是则返回 True，否则返回 False
+set31 = {'a', 'b', 1, 2}
+set32 = {'a', 1}
+set33 = set31.issuperset(set32)
+print(set33)
+
+# pop()方法：用于随机移除一个元素
+set34 = {'a', 'b', 1, 2}
+print(set34.pop())
+print(set34)
+
+# remove()方法:用于移除集合中的指定元素
+# 该方法不同于 discard() 方法，因为 remove() 方法在移除一个不存在的元素时会发生错误，而 discard() 方法不会
+set35 = {'a', 'b', 1, 2}
+set35.remove('b')
+print(set35)
+# set35.remove('c') #删除不存在的报错
+# print(set35)
+
+# symmetric_difference()方法：返回两个集合中不重复的元素集合，即会移除两个集合中都存在的元素
+set36 = {'a', 'b', 1, 2}
+set37 = {'a', 'c', 3, 2}
+set38 = set36.symmetric_difference(set37)   # 移除两个集合中都存在的元素
+print(set38)
+
+# symmetric_difference_update()方法:移除当前集合中在另外一个指定集合相同的元素，
+# 并将另外一个指定集合中不同的元素插入到当前集合中
+set39 = {'a', 'b', 1, 2}
+set40 = {'a', 'c', 3, 2}
+set39.symmetric_difference_update(set40)    # 移除两个集合中都存在的元素，并将 set40 的元素添加到 set39 中
+print(set39)
+
+# union()方法：返回两个集合的并集，即包含了所有集合的元素，重复的元素只会出现一次
+set41 = {'a', 'b', 1, 2}
+set42 = {'a', 'c', 3, 2}
+set43 = set41.union(set42)  #两个合并在一起，移除重复的
+print(set43)
+
+# update()方法：用于修改当前集合，可以添加新的元素或集合到当前集合中，
+# 如果添加的元素在集合中已存在，则该元素只会出现一次，重复的会忽略
+set44 = {'a', 'b', 1, 2}
+set45 = {'a', 'c', 3, 2}
+set44.update(set45) #把 set45 元素添加到 set44 中
+print(set44)
