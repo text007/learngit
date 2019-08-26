@@ -103,3 +103,75 @@ h9(1,b = 2, c = 3)
 print('---------------')
 
 # 匿名函数
+# python 使用 lambda 来创建匿名函数
+sum1 = lambda arg1, arg2: arg1 + arg2
+print(sum1(10, 20))
+print('---------------')
+
+# return语句
+# 退出函数，选择性地向调用方返回一个表达式。不带参数值的return语句返回None
+def sum2(arg1, arg2):
+    total = arg1 + arg2
+    print('内：', total)
+    return total    # 返回 total 的值
+
+total = sum2(10, 20)
+print('外：', total)
+print('---------------')
+
+# 变量作用域
+# 程序的变量并不是在哪个位置都可以访问的，访问权限决定于这个变量是在哪里赋值的
+'''
+L （Local） 局部作用域
+E （Enclosing） 闭包函数外的函数中
+G （Global） 全局作用域
+B （Built-in） 内置作用域（内置函数所在模块的范围）
+只有模块（module），类（class）以及函数（def、lambda）才会引入新的作用域，
+其它的代码块（如 if/elif/else/、try/except、for/while等）是不会引入新的作用域的，也就是说这些语句内定义的变量，外部也可以访问
+'''
+if True:
+    msg = 'abc'
+print(msg)
+
+def test():
+    msg_inner = 'ABC'
+# print(msg_inner)  # 访问报错
+print('---------------')
+
+# 全局变量和局部变量
+# 定义在函数内部的变量拥有一个局部作用域，定义在函数外的拥有全局作用域。
+# 局部变量只能在其被声明的函数内部访问，而全局变量可以在整个程序范围内访问。
+# 调用函数时，所有在函数内声明的变量名称都将被加入到作用域中。
+
+total1 = 0  #全局变量
+def sum3(arg1,arg2):
+    total1 = arg1 +arg2 #局部变量
+    print('内变量：', total1)
+    return total1
+
+sum3(10,20)
+print('外变量：', total1)
+print('---------------')
+
+# global 和 nonlocal 关键字
+# 修改全局变量
+num = 1
+def fun1():
+    global num  # 声明修改全局变量
+    print(num)
+    num = 123
+    print(num)
+fun1()
+print(num)
+print('---------------')
+
+# 修改嵌套作用域（enclosing 作用域，外层非全局作用域）
+def outer():
+    num = 10
+    def inner():
+        nonlocal num    # 声明修改局部变量
+        num = 100
+        print(num)
+    inner()
+    print(num)
+outer()
