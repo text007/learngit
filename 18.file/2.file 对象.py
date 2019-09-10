@@ -148,7 +148,7 @@ print('---------------------')
 
 # write() 方法用于向文件中写入指定字符串
 fo = open('test1.txt', 'r+')
-str2 = '\n6:第六行'
+str2 = '\n6:www.runoob.com'
 fo.seek(0,2)    # 文件末尾
 line15 = fo.write(str2) # 写入字符
 fo.seek(0, 0)   # 文件开头
