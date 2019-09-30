@@ -1,12 +1,12 @@
 
-
+'''一个类'''
 class Car():    # 定义一个类
 
     def __init__(self, make, model, year):
         self.make = make    # 初始化属性，并保存
         self.model = model
         self.year = year
-        self.odometer_reading = 0   # 给属性指定默认值
+        self.odometer_reading = 5   # 给属性指定默认值
 
     def get(self):
         long_name = str(self.year) + ' ' + self.model + ' ' + self.make
@@ -21,8 +21,9 @@ class Car():    # 定义一个类
         else:
             print('不能小于初始值。')
 
-    def increment_odometer(self, miles): # 定义一个方法
-        self.odometer_reading += miles  # 设置指定的值
+    def increment_odometer(self, miles):
+        self.odometer_reading += miles
+
 
 class Battery():    # 定义一个类
 
@@ -42,7 +43,7 @@ class Battery():    # 定义一个类
         message += ' m'
         print(message)  # 打印
 
-# 父类必须在当前文件中，且在子类前面
+
 class ElectricCar(Car): # 定义子类，（）中必须包含父类名称
 
     def __init__(self, make, model, year):  # 接受创建父类实例所需信息
@@ -50,8 +51,4 @@ class ElectricCar(Car): # 定义子类，（）中必须包含父类名称
         # super()：特殊方法；将父类与子类关联
         super().__init__(make, model, year)
         self.battery = Battery()  # 子类包含这个属性，父类不包含
-       
-my_tesla = ElectricCar('tesla', 'model s', 2016)    # 创建实例
-print(my_tesla.get())   # 打印方法
-my_tesla.battery.describe_battery() # 调用
-my_tesla.battery.get_range()    # 调用
+        
